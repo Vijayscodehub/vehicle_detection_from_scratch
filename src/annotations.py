@@ -79,7 +79,7 @@ def export(require_complete=False):
         validate_boxes(record["boxes"], int(row["width"]), int(row["height"]))
         if record["status"] not in ("draft", "reviewed"):
             raise ValueError("Status must be draft or reviewed")
-        row["annotation_status"] = "complete"
+        row["annotation_status"] = "complete" if record["status"] == "reviewed" else "draft"
         row["qa_status"] = record["status"]
         counts[record["status"]] += 1
     pending = sum(row["qa_status"] != "reviewed" for row in rows)

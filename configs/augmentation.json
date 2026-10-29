@@ -1,0 +1,11 @@
+{
+  "name": "augmentation_seed42",
+  "seed": 42,
+  "threads": 2,
+  "batch_size": 8,
+  "epochs": 80,
+  "patience": 15,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "augment": true
+}

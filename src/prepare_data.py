@@ -69,6 +69,9 @@ def previews(sequences):
 
 
 def sample_dataset(sequences):
+    # Sampling is a frozen milestone. Do not silently reset annotation statuses.
+    if (ROOT / "data/manifest.csv").exists():
+        raise ValueError("Manifest already exists; preserve the frozen sample instead of resampling")
     review = json.loads((ROOT / "data/screening_review.json").read_text())
     candidates = sorted(sequences)
     random.Random(42).shuffle(candidates)

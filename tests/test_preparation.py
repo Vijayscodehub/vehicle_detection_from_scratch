@@ -5,7 +5,7 @@ import hashlib
 import unittest
 from collections import Counter, defaultdict
 
-from src.prepare_data import ROOT, spaced_indices
+from src.prepare_data import ROOT, sample_dataset, spaced_indices
 
 
 class PreparationTests(unittest.TestCase):
@@ -15,6 +15,10 @@ class PreparationTests(unittest.TestCase):
         self.assertEqual(len(set(spaced_indices(203, 20))), 20)
         with self.assertRaises(ValueError):
             spaced_indices(19, 20)
+
+    def test_frozen_sample_cannot_be_overwritten(self):
+        with self.assertRaisesRegex(ValueError, "Manifest already exists"):
+            sample_dataset({})
 
     def test_frozen_manifest(self):
         with (ROOT / "data/manifest.csv").open() as handle:
