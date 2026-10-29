@@ -1,0 +1,13 @@
+{
+  "kind": "synthetic CPU optimization smoke test, NOT dataset performance",
+  "torch_version": "2.5.1+cpu",
+  "cuda_build": null,
+  "threads": 2,
+  "batch_size": 8,
+  "measured_steps": 20,
+  "seconds_per_training_batch": 0.13115117843262852,
+  "estimated_300_image_training_seconds_per_epoch": 4.983744780439884,
+  "estimate_excludes": "image loading, augmentation, validation, checkpointing and annotation",
+  "first_loss": 4.959981918334961,
+  "last_loss": 3.8322043418884277
+}

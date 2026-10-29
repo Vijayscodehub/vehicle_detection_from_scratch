@@ -46,4 +46,6 @@ strength of reported performance claims.
 - No fixed CPU-time budget was requested. Benchmark before lengthy training.
 - Use a local `.venv`; do not install into other projects' environments.
 - Record incomplete work rather than fabricate labels, metrics, or completion.
-- Commit each validated milestone. Large local artifacts remain ignored.
+- Commit each validated milestone. Track all reports, including figures and
+  prediction images. Raw datasets, curated image collections, checkpoints,
+  environments, and run logs remain ignored.

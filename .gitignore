@@ -2,11 +2,9 @@
 /dataset/
 /curated_dataset/images/
 
-# Keep manifests, annotation JSON, configuration, and small reports in Git.
+# Keep manifests, annotations, configuration, and all reports in Git.
 /checkpoints/
 /runs/
-/reports/figures/
-/reports/predictions/
 
 # Local Python environments and generated caches.
 .venv/

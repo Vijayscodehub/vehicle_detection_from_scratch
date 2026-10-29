@@ -25,8 +25,9 @@ All project changes and outputs stay inside this directory.
 ## Reproducibility and Commits
 
 Commit each completed, validated milestone locally. Track code, annotations,
-manifests, configuration, small reports, and documentation. Keep raw images,
-checkpoints, environments, and bulky outputs out of Git. Record source paths and
+manifests, configuration, all reports (including figures and predictions), and
+documentation. Keep raw images, checkpoints, environments, and run logs out of
+Git. Record source paths and
 checksums so ignored data can be identified. CPU training remains subject to a
 user-approved time budget; do not promise an accuracy or successful convergence.
 
