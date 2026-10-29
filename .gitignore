@@ -1,0 +1,27 @@
+# Raw and curated image collections stay local.
+/dataset/
+/curated_dataset/images/
+
+# Keep manifests, annotation JSON, configuration, and small reports in Git.
+/checkpoints/
+/runs/
+/reports/figures/
+/reports/predictions/
+
+# Local Python environments and generated caches.
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local secrets and editor/system files.
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
