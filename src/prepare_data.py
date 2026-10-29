@@ -129,15 +129,39 @@ def sample_dataset(sequences):
     print(f"Sampled {len(records)} unique images: {counts}; pilot=75")
 
 
+def restore_samples():
+    with (ROOT / "data/manifest.csv").open() as handle:
+        records = list(csv.DictReader(handle))
+    for row in records:
+        source = (ROOT / row["source_path"]).resolve()
+        target = (ROOT / row["image_path"]).resolve()
+        if not source.is_relative_to(RAW) or not target.is_relative_to(ROOT / "curated_dataset/images"):
+            raise ValueError("Manifest path is outside the expected source or curated image folder")
+        expected = row["sha256"]
+        if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"Raw source changed: {source}")
+        if target.exists():
+            if hashlib.sha256(target.read_bytes()).hexdigest() != expected:
+                raise ValueError(f"Refusing to overwrite changed curated image: {target}")
+        else:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+    print(f"Restored/verified {len(records)} images without changing frozen metadata")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--previews", action="store_true")
     parser.add_argument("--sample", action="store_true")
+    parser.add_argument("--restore", action="store_true")
     arguments = parser.parse_args()
-    sources = inventory()
-    if arguments.previews:
-        previews(sources)
-    elif arguments.sample:
-        sample_dataset(sources)
+    if arguments.restore:
+        restore_samples()
     else:
-        print(f"Inventoried {len(sources)} sequences")
+        sources = inventory()
+        if arguments.previews:
+            previews(sources)
+        elif arguments.sample:
+            sample_dataset(sources)
+        else:
+            print(f"Inventoried {len(sources)} sequences")

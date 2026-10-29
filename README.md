@@ -4,7 +4,8 @@
 
 Version 1 is a CPU-only binary `vehicle` detector. Dataset selection is complete:
 500 images from 25 distinct source-prefix groups, split into 300 training,
-100 validation, and 100 test images. Labels and training are not complete yet.
+100 validation, and 100 test images. 13 training-pilot images (126 boxes) are
+AI-reviewed; 487 images still need reviewed labels. Full training is not complete.
 See [flow.md](flow.md) for the workflow and [decisions.md](decisions.md) for the
 execution decisions. Two- and three-class detection below are future extensions,
 not deliverables of the active run.
@@ -13,6 +14,11 @@ Annotations will be AI-produced from visual inspection of raw frames and reviewe
 in a second visual pass, not human-drawn in CVAT. Supplied BDD100K annotations and
 pretrained detectors must not be used. Test annotations are prepared using frozen
 rules, then held out from model development. No completed-model claim is made.
+
+The CPU implementation passes 21 focused tests. A four-image training-only
+overfit check reduced loss from 8.31 to 0.035 over 300 steps. This only tests
+optimization and memorization; no validation or test result is available.
+See [reports/progress.md](reports/progress.md) for the current completion boundary.
 
 A compact computer-vision project for learning the complete object-detection workflow: data selection, bounding-box annotation, leakage-safe splitting, model training, and honest evaluation.
 
@@ -226,21 +232,57 @@ After the supervised detector is stable:
 - Run a semi-supervised pseudo-labeling experiment with a separate pool of unlabeled videos and a fixed untouched test set.
 
 
-## need to extend at end to this : 
-Semi_supervised_vehicle_detection is misleading because Version 1 uses only labeled data:
+## Reproduce the Current State
 
-image + manually drawn bounding boxes
-    -> train detector
+Run from this project directory with Python 3.12. Raw tracking frames must be
+present at the source paths recorded in `data/manifest.csv`; they are not in Git.
 
-That is supervised learning.
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m src.prepare_data --restore
+.venv/bin/python -m src.annotations export
+.venv/bin/python -m unittest discover -s tests -v
+```
 
-Semi-supervised detection would require a separate unlabeled pool and a process like:
+`--restore` verifies original hashes and copies missing curated images without
+resampling or resetting labels. It refuses to overwrite a changed curated image.
 
-small labeled dataset
-    -> train initial detector
-    -> predict boxes on unlabeled images
-    -> keep high-confidence pseudo-labels
-    -> retrain
-    -> evaluate on untouched labeled test videos
+The CPU timing check is independent of dataset-label completion:
 
-Your current project may eventually become semi-supervised, but its first and most important version is a supervised detector. A name such as vehicle_detection_from_scratch leaves room for later expansion without describing the wrong learning setup.
+```bash
+.venv/bin/python -m src.train --benchmark --steps 20
+```
+
+The training-only pilot check has already run locally. On a fresh checkout with
+restored images and reviewed pilot labels, reproduce it with:
+
+```bash
+.venv/bin/python -m src.train --pilot-overfit --steps 300
+```
+
+It refuses to overwrite an existing `checkpoints/pilot_overfit` run. Checkpoint
+weights remain local; its report and prediction overlays are tracked in Git.
+Expect similar optimization results in the pinned CPU environment, not identical
+wall-clock times or guaranteed bitwise results on different hardware.
+
+## Full Training After Annotation Completion
+
+These commands are deliberately blocked while labels remain incomplete:
+
+```bash
+.venv/bin/python -m src.annotations export --require-complete
+.venv/bin/python -m src.train --config configs/baseline.json
+.venv/bin/python -m src.train --config configs/augmentation.json
+```
+
+Visually inspect the saved validation predictions after each experiment and
+record findings. Only after selecting and freezing choices from validation:
+
+```bash
+.venv/bin/python -m src.evaluate freeze
+.venv/bin/python -m src.evaluate test
+```
+
+Version 1 is supervised learning with AI-produced labels, not semi-supervised
+pseudo-labeling. There is no separate unlabeled training pool in this run.

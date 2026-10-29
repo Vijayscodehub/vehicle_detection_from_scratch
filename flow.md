@@ -27,13 +27,23 @@ All project changes and outputs stay inside this directory.
 Commit each completed, validated milestone locally. Track code, annotations,
 manifests, configuration, all reports (including figures and predictions), and
 documentation. Keep raw images, checkpoints, environments, and run logs out of
-Git. Record source paths and
-checksums so ignored data can be identified. CPU training remains subject to a
-user-approved time budget; do not promise an accuracy or successful convergence.
+Git. Record source paths and checksums so ignored data can be identified.
+Use the frozen manifest's `--restore` command to rebuild ignored image copies.
+No fixed CPU-time budget was requested. Use bounded experiment configurations
+and measured timings; do not promise an accuracy or successful convergence.
 
 ## Status
 
 Repository initialization, raw-frame inventory, visual screening, video split,
-and 500-frame sampling are complete. All labels remain pending. No detector has
-been trained or evaluated. The training pilot contains exactly 75 of the selected
-training images, spread over six training videos.
+and 500-frame sampling are complete. The detector, CPU training/evaluation code,
+and dataset safeguards are implemented, with 21 focused tests passing.
+
+13 of 75 pilot images have AI-produced, visually self-reviewed labels (126
+boxes); all are from the first training video. 62 pilot images and 425 non-pilot
+images remain unreviewed. Annotation rules have not passed the full pilot gate.
+
+A four-image training-only overfit diagnostic ran for 300 CPU steps. Loss fell
+from 8.3101 to 0.0345; prediction overlays were visually inspected. This is not a
+baseline, validation experiment, or final detector result. The ordinary full-data
+training command continues to reject incomplete labels. Final evaluation has not
+run, and no validation or test performance is known.

@@ -8,7 +8,7 @@ import time
 import numpy as np
 import torch
 from PIL import Image, ImageDraw
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset
 
 from src.data import VehicleDataset, collate_batch
 from src.geometry import detection_loss, detections
@@ -92,6 +92,48 @@ def benchmark(steps=20):
     print(json.dumps(result, indent=2))
 
 
+def overfit_pilot(steps):
+    if steps < 2:
+        raise ValueError("Overfit check needs at least two optimization steps")
+    output = ROOT / "checkpoints/pilot_overfit"
+    if output.exists():
+        raise ValueError("Pilot overfit run already exists; preserve the recorded result")
+    seed_everything()
+    dataset = VehicleDataset("train", pilot_only=True)
+    subset = Subset(dataset, list(range(min(4, len(dataset)))))
+    images, targets, identifiers = collate_batch([subset[index] for index in range(len(subset))])
+    model = VehicleDetector().cpu()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    history = []
+    started = time.perf_counter()
+    for step in range(1, steps + 1):
+        logits, offsets = model(images)
+        loss = detection_loss(logits, offsets, model.anchors, targets)
+        if not torch.isfinite(loss):
+            raise ValueError("Non-finite pilot loss")
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        if step == 1 or step % 25 == 0 or step == steps:
+            record = {"step": step, "loss": float(loss.detach())}
+            history.append(record)
+            print(json.dumps(record), flush=True)
+    predictions, references = predict_dataset(model, subset)
+    metrics = evaluate_predictions(predictions, references, operating_threshold=0.5)
+    output.mkdir(parents=True)
+    torch.save({"model": model.state_dict(), "steps": steps, "seed": 42,
+                "training_image_ids": identifiers}, output / "last.pt")
+    result = {"kind": "four-image training-only overfit diagnostic, NOT validation or test performance",
+              "device": "cpu", "seed": 42, "threads": 2, "steps": steps,
+              "training_image_ids": identifiers, "history": history,
+              "elapsed_seconds": time.perf_counter() - started,
+              "training_subset_metrics": metrics,
+              "annotation_limitation": "AI-produced labels, no independent human audit"}
+    (ROOT / "reports/pilot_overfit.json").write_text(json.dumps(result, indent=2) + "\n")
+    save_overlays(subset, predictions, 0.5, ROOT / "reports/predictions/pilot_overfit")
+    print(f"Training-only overfit check finished; final loss={history[-1]['loss']:.4f}")
+
+
 def train(config_path):
     if (ROOT / "reports/final_test_result.json").exists():
         raise ValueError("Final test already evaluated. Do not tune against this test set.")
@@ -156,10 +198,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/baseline.json")
     parser.add_argument("--benchmark", action="store_true")
+    parser.add_argument("--pilot-overfit", action="store_true")
     parser.add_argument("--steps", type=int, default=20)
     arguments = parser.parse_args()
     if arguments.benchmark:
         benchmark(arguments.steps)
+    elif arguments.pilot_overfit:
+        overfit_pilot(arguments.steps)
     else:
         path = (ROOT / arguments.config).resolve()
         if not path.is_relative_to(ROOT):

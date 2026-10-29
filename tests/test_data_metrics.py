@@ -29,6 +29,19 @@ class DataMetricTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "unreviewed"):
                 VehicleDataset("train")
 
+    def test_partial_pilot_mode_is_training_only(self):
+        for split in ("validation", "test"):
+            with self.assertRaisesRegex(ValueError, "training-only"):
+                VehicleDataset(split, pilot_only=True)
+
+    def test_actual_reviewed_pilot_loader(self):
+        dataset = VehicleDataset("train", pilot_only=True)
+        self.assertGreater(len(dataset), 0)
+        self.assertTrue(all(image["qa_status"] == "reviewed" for image in dataset.images))
+        image, boxes, _ = dataset[0]
+        self.assertEqual(image.shape, (3, 320, 320))
+        self.assertGreater(len(boxes), 0)
+
     def test_perfect_and_duplicate_predictions(self):
         box = torch.tensor([[0., 0., 1., 1.]])
         predictions = {"one": (box.repeat(2, 1), torch.tensor([0.9, 0.8]))}

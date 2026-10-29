@@ -9,7 +9,7 @@ import torch
 from PIL import Image, ImageEnhance, ImageOps
 from torch.utils.data import Dataset
 
-from src.annotations import validate_boxes
+from src.annotations import manifest, validate_boxes
 from src.prepare_data import ROOT
 
 
@@ -34,14 +34,21 @@ def horizontal_flip(image, boxes):
 
 
 class VehicleDataset(Dataset):
-    def __init__(self, split, augment=False):
+    def __init__(self, split, augment=False, pilot_only=False):
         if split not in ("train", "validation", "test"):
             raise ValueError("Unknown dataset split")
         if augment and split != "train":
             raise ValueError("Augmentation is training-only")
+        if pilot_only and split != "train":
+            raise ValueError("Partial pilot loading is training-only")
         self.augment = augment
         self.document = json.loads((ROOT / f"curated_dataset/annotations/{split}.json").read_text())
         self.images = self.document["images"]
+        if pilot_only:
+            # This explicit diagnostic mode never relaxes the full-training gate.
+            pilot_ids = {row["image_id"] for row in manifest() if row["pilot"] == "1"}
+            self.images = [image for image in self.images
+                           if image["source_id"] in pilot_ids and image["qa_status"] == "reviewed"]
         incomplete = [image["source_id"] for image in self.images if image["qa_status"] != "reviewed"]
         if incomplete:
             raise ValueError(f"{split}: {len(incomplete)} unreviewed images; do not train/evaluate incomplete labels")
@@ -49,6 +56,8 @@ class VehicleDataset(Dataset):
         if len(self.boxes) != len(self.images) or not self.images:
             raise ValueError("Empty dataset or duplicate image IDs")
         for annotation in self.document["annotations"]:
+            if pilot_only and annotation["image_id"] not in self.boxes:
+                continue
             if annotation["category_id"] != 1 or annotation["image_id"] not in self.boxes:
                 raise ValueError("Unknown category or image ID")
             left, top, width, height = annotation["bbox"]
