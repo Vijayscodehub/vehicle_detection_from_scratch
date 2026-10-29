@@ -1,0 +1,53 @@
+{
+  "annotation_version": "0.2-pilot",
+  "coordinate_format": "original-image xyxy pixels",
+  "category": "vehicle",
+  "annotator": "GitHub Copilot visual inspection",
+  "supplied_annotations_used": false,
+  "independent_human_audit": false,
+  "images": {
+    "01_01": {
+      "status": "draft",
+      "notes": "Full-resolution first pass. Distant parked queues need a focused second pass before acceptance.",
+      "boxes": [
+        [0, 304, 301, 433],
+        [298, 307, 401, 380],
+        [394, 308, 459, 365],
+        [457, 310, 493, 344],
+        [480, 309, 507, 338],
+        [513, 308, 537, 333],
+        [535, 286, 558, 322],
+        [602, 313, 622, 336],
+        [610, 311, 640, 341],
+        [620, 315, 688, 360],
+        [593, 296, 1064, 455],
+        [1166, 313, 1280, 391]
+      ]
+    },
+    "01_03": {
+      "status": "draft",
+      "notes": "Full-resolution first pass. Check distant queue and partially occluded targets against minimum visible size.",
+      "boxes": [
+        [158, 319, 302, 389],
+        [297, 308, 400, 379],
+        [392, 308, 459, 366],
+        [456, 311, 491, 345],
+        [479, 309, 507, 338],
+        [520, 286, 545, 330],
+        [509, 302, 691, 392],
+        [938, 263, 1280, 403]
+      ]
+    },
+    "01_04": {
+      "status": "draft",
+      "notes": "Full-resolution first pass. Foreground taxi occludes the distant queue; review visible-size eligibility.",
+      "boxes": [
+        [0, 305, 71, 407],
+        [158, 319, 301, 389],
+        [298, 307, 399, 363],
+        [222, 309, 666, 453],
+        [610, 315, 705, 390]
+      ]
+    }
+  }
+}
