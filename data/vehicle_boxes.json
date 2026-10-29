@@ -7,17 +7,16 @@
   "independent_human_audit": false,
   "images": {
     "01_01": {
-      "status": "draft",
-      "notes": "Full-resolution first pass. Distant parked queues need a focused second pass before acceptance.",
+      "status": "reviewed",
+      "notes": "AI second pass inspected full raw frame and enlarged queue. Removed combined undersized-target box and tightened parked-car boxes. Distant targets below 20px visible width or height excluded. Not independently audited.",
       "boxes": [
         [0, 304, 301, 433],
         [298, 307, 401, 380],
         [394, 308, 459, 365],
-        [457, 310, 493, 344],
-        [480, 309, 507, 338],
+        [457, 315, 495, 346],
+        [487, 308, 508, 337],
         [513, 308, 537, 333],
-        [535, 286, 558, 322],
-        [602, 313, 622, 336],
+        [535, 292, 558, 324],
         [610, 311, 640, 341],
         [620, 315, 688, 360],
         [593, 296, 1064, 455],
@@ -25,28 +24,144 @@
       ]
     },
     "01_03": {
-      "status": "draft",
-      "notes": "Full-resolution first pass. Check distant queue and partially occluded targets against minimum visible size.",
+      "status": "reviewed",
+      "notes": "AI second pass inspected full raw frame and enlarged queue. Corrected distant SUV and red car; excluded undersized visible fragments behind crossing minivan. Not independently audited.",
       "boxes": [
         [158, 319, 302, 389],
         [297, 308, 400, 379],
         [392, 308, 459, 366],
         [456, 311, 491, 345],
-        [479, 309, 507, 338],
-        [520, 286, 545, 330],
+        [484, 305, 515, 337],
+        [519, 286, 543, 316],
+        [516, 313, 538, 335],
         [509, 302, 691, 392],
         [938, 263, 1280, 403]
       ]
     },
     "01_04": {
-      "status": "draft",
-      "notes": "Full-resolution first pass. Foreground taxi occludes the distant queue; review visible-size eligibility.",
+      "status": "reviewed",
+      "notes": "AI second pass inspected full raw frame and enlarged queue. Added visible red-truck cab; excluded other fragments below 20px visible height. Not independently audited.",
       "boxes": [
         [0, 305, 71, 407],
         [158, 319, 301, 389],
         [298, 307, 399, 363],
         [222, 309, 666, 453],
-        [610, 315, 705, 390]
+        [590, 311, 705, 390],
+        [517, 282, 540, 306]
+      ]
+    },
+    "01_06": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass; visible roof/body fragments of occluded parked vehicles retained only at minimum visible size. Not independently audited.",
+      "boxes": [
+        [158, 319, 299, 390], [296, 307, 401, 382],
+        [393, 308, 462, 365], [455, 309, 487, 346],
+        [488, 309, 541, 358], [501, 281, 532, 313],
+        [619, 316, 663, 337], [610, 312, 638, 341],
+        [534, 272, 985, 448]
+      ]
+    },
+    "01_07": {
+      "status": "reviewed",
+      "notes": "AI full-frame, overlay and enlarged-queue second pass; undersized center-road cars and narrow parked fragments excluded. Not independently audited.",
+      "boxes": [
+        [154, 320, 299, 394], [296, 309, 400, 384],
+        [395, 310, 462, 367], [455, 310, 487, 347],
+        [489, 312, 540, 359], [501, 285, 530, 317],
+        [621, 319, 691, 371], [611, 314, 638, 345]
+      ]
+    },
+    "01_09": {
+      "status": "reviewed",
+      "notes": "AI full-frame, overlay and enlarged-queue second pass; corrected partially occluded oncoming car. Distant moving sedan below minimum visible height excluded. Not independently audited.",
+      "boxes": [
+        [0, 286, 326, 466], [380, 290, 490, 360],
+        [500, 294, 610, 374], [574, 260, 615, 326],
+        [364, 302, 394, 347], [487, 294, 520, 346],
+        [750, 315, 899, 417], [716, 308, 768, 349],
+        [704, 299, 734, 323]
+      ]
+    },
+    "01_11": {
+      "status": "reviewed",
+      "notes": "AI full-frame, overlay and enlarged-queue second pass; separated two occluded cars and the independent white car beside the truck. Not independently audited.",
+      "boxes": [
+        [0, 287, 194, 449], [80, 268, 447, 550],
+        [405, 295, 449, 357], [422, 298, 479, 326],
+        [445, 310, 503, 355], [481, 251, 551, 346],
+        [543, 307, 575, 333],
+        [705, 310, 801, 380], [691, 301, 754, 359],
+        [663, 299, 702, 338], [641, 295, 671, 325],
+        [583, 300, 608, 322]
+      ]
+    },
+    "01_12": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass. White crossing car retained: emergency identity cannot be inferred merely from neighboring frames. Parked queue checked; not independently audited.",
+      "boxes": [
+        [0, 274, 321, 609], [263, 326, 334, 399],
+        [269, 306, 376, 380], [371, 324, 440, 368],
+        [410, 259, 482, 358], [643, 323, 740, 396],
+        [627, 311, 687, 377], [599, 312, 642, 349],
+        [578, 308, 606, 337], [480, 315, 541, 342]
+      ]
+    },
+    "01_14": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass. Emergency SUV emerging behind truck excluded under pilot rules. Overlapping parked targets checked; not independently audited.",
+      "boxes": [
+        [0, 315, 177, 427], [203, 307, 314, 400],
+        [306, 297, 376, 346], [297, 323, 491, 430],
+        [464, 213, 600, 378], [1113, 373, 1280, 607],
+        [909, 303, 1184, 475], [777, 304, 843, 360],
+        [741, 308, 774, 339], [727, 300, 753, 331],
+        [651, 307, 691, 338], [393, 299, 464, 327]
+      ]
+    },
+    "01_15": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass. Clearly marked emergency SUV at left-center excluded under current pilot rules. Truncated truck and distant queues checked; not independently audited.",
+      "boxes": [
+        [0, 0, 410, 594], [777, 298, 909, 399],
+        [737, 308, 782, 342], [698, 304, 738, 341],
+        [676, 294, 712, 332], [581, 304, 633, 344],
+        [486, 313, 507, 340]
+      ]
+    },
+    "01_17": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass, including dense parked queue and partially occluded targets. Not independently audited.",
+      "boxes": [
+        [0, 329, 153, 441], [229, 243, 403, 395],
+        [399, 299, 446, 363], [445, 315, 498, 348],
+        [611, 301, 714, 390], [863, 320, 1016, 411],
+        [815, 320, 893, 389], [794, 313, 845, 368],
+        [762, 293, 846, 354], [584, 304, 616, 332],
+        [553, 312, 583, 333]
+      ]
+    },
+    "01_18": {
+      "status": "reviewed",
+      "notes": "AI full-frame and overlay second pass. Truncated box truck and red car retained; oncoming queue checked against visible-size cutoff. Not independently audited.",
+      "boxes": [
+        [0, 181, 154, 470], [144, 292, 285, 402],
+        [308, 321, 395, 370], [444, 305, 524, 366],
+        [519, 310, 560, 341], [553, 308, 586, 335],
+        [579, 299, 708, 407], [1126, 337, 1280, 531],
+        [915, 324, 1196, 466], [827, 311, 981, 410],
+        [764, 280, 911, 386]
+      ]
+    },
+    "01_20": {
+      "status": "reviewed",
+      "notes": "AI full-frame, overlay and enlarged cross-street second pass. Removed vegetation box, separated distant car, and added missed cross-street vehicles. Not independently audited.",
+      "boxes": [
+        [0, 373, 62, 452], [194, 306, 414, 466],
+        [487, 315, 559, 367], [429, 329, 483, 359],
+        [610, 300, 733, 405], [758, 308, 867, 352],
+        [927, 312, 1047, 349], [1173, 302, 1280, 340],
+        [961, 300, 1015, 326], [556, 317, 588, 344],
+        [18, 332, 145, 373]
       ]
     }
   }
