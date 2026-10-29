@@ -1,4 +1,4 @@
-# Annotation Guidelines v0.1
+# Annotation Guidelines v0.2 (Binary Pilot)
 
 Use these rules for the 75-image pilot only. After the pilot, revise this document once and freeze the resulting version before annotating the full dataset.
 
@@ -8,15 +8,10 @@ Create consistent, axis-aligned bounding-box labels for the vehicle-detection pr
 
 ## Label Set
 
-Record the detailed class during annotation so the same dataset can support all project stages:
-
-| Label | Include |
-| --- | --- |
-| `car` | Sedan, hatchback, SUV, minivan, van, pickup, taxi. |
-| `truck` | Box truck, lorry, freight truck, semi-truck, dump truck. |
-| `bus` | City bus, coach, school bus, articulated bus. |
-
-For Stage 1, convert all three labels to `vehicle`. For Stage 2, convert `truck` and `bus` to `large_vehicle`.
+Use only `vehicle`: sedans, hatchbacks, SUVs, minivans, vans, pickups, taxis,
+box trucks, lorries, freight trucks, semi-trucks, dump trucks, and buses.
+Do not require a car/truck/bus subtype for the current binary detector.
+Labels are AI-produced by visual inspection, not supplied BDD100K labels.
 
 ## Bounding-Box Rules
 
@@ -31,7 +26,8 @@ For Stage 1, convert all three labels to `vehicle`. For Stage 2, convert `truck`
 
 ## Ambiguous Cases
 
-If a vehicle cannot be reliably classified as `car`, `truck`, or `bus`, mark the image for review. Do not make a different decision for similar cases later.
+If an object cannot reliably be identified as an in-scope vehicle, mark the image
+for review. A clear vehicle whose subtype is uncertain can still be `vehicle`.
 
 If the ambiguity would leave an in-scope vehicle unlabeled or make the image difficult to use, remove the image from the project dataset and record the reason in the manifest.
 
@@ -50,3 +46,4 @@ For every pilot image, check:
 | Version | Date | Change | Reason |
 | --- | --- | --- | --- |
 | 0.1 | 2026-10-25 | Initial pilot rules | Test consistency before full annotation. |
+| 0.2 | 2026-10-29 | Binary-only AI visual annotation | Authorized CPU-only Version 1 scope. |

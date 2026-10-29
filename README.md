@@ -1,12 +1,26 @@
 # Vehicle Detection From Scratch
 
+## Active Version 1
+
+Version 1 is a CPU-only binary `vehicle` detector. Dataset selection is complete:
+500 images from 25 distinct source-prefix groups, split into 300 training,
+100 validation, and 100 test images. Labels and training are not complete yet.
+See [flow.md](flow.md) for the workflow and [decisions.md](decisions.md) for the
+execution decisions. Two- and three-class detection below are future extensions,
+not deliverables of the active run.
+
+Annotations will be AI-produced from visual inspection of raw frames and reviewed
+in a second visual pass, not human-drawn in CVAT. Supplied BDD100K annotations and
+pretrained detectors must not be used. Test annotations are prepared using frozen
+rules, then held out from model development. No completed-model claim is made.
+
 A compact computer-vision project for learning the complete object-detection workflow: data selection, bounding-box annotation, leakage-safe splitting, model training, and honest evaluation.
 
 The goal is not to reproduce a production detector or beat YOLO. The goal is to understand what an object detector learns and how to evaluate it fairly.
 
 ## Project Question
 
-> How well can a custom PyTorch detector locate vehicles in driving-video sequences it has never seen, when trained on manually annotated frames and evaluated with video-level train/validation/test splits?
+> How well can a custom PyTorch detector locate vehicles in unseen driving-video sequences when trained on AI-produced, visually self-reviewed annotations and evaluated with video-level train/validation/test splits?
 
 ## Scope
 
@@ -16,7 +30,7 @@ Included:
 
 - Curating a small dataset from raw driving-video frames.
 - Writing annotation rules before broad labeling.
-- Drawing bounding boxes manually in CVAT.
+- Creating bounding boxes through AI visual inspection, with recorded provenance and a second pass.
 - Creating train, validation, and test splits by source video.
 - Building a small CNN-based detector, anchor matching, losses, decoding, and non-maximum suppression.
 - Measuring AP, precision, recall, and common failure cases.
@@ -30,9 +44,9 @@ Not included:
 
 ## Dataset
 
-The source dataset is the BDD100K tracking/MOT subset, which contains driving-video sequences. The project dataset is a manually selected and labeled subset of those raw sequences.
+The source dataset is the BDD100K tracking/MOT subset. The project subset is selected by AI visual screening of raw sequences, with AI-produced labels planned for the selected frames.
 
-Do not inspect or use BDD100K's supplied detection annotations while choosing frames or producing this project's labels. They may be used later for a clearly documented annotation-quality audit, but never silently used to replace manual labels.
+Do not inspect or use BDD100K's supplied annotations for selection, labeling, or this run's evaluation. Do not silently substitute supplied labels for the project's own annotations.
 
 ### Version 1 Data Protocol
 
@@ -68,11 +82,11 @@ After the pilot annotations, count boxes by class and split before committing to
 
 ### Pilot Before Version 1
 
-Start with a pilot of 75 images from six videos. The pilot exists to test the annotation rules and estimate labeling time. Review and revise rules once after the pilot, then freeze the rules before labeling the full 500-image dataset.
+Start with 75 training images from six training videos, included in the 500-image total. Review the pilot and revise rules once, then freeze them before labeling validation or test images.
 
 ## Class Plan
 
-Build the project in stages. Each stage uses the same frozen video split.
+Only Stage 1 is in the active Version 1 scope. Stages 2 and 3 are future work and would reuse the frozen video split. Binary annotation requires only `vehicle`, not separate vehicle-type labels. The following class-coverage targets apply to future multiclass work, not the current binary dataset.
 
 | Stage | Classes                     | Purpose                                                                  |
 | ----- | --------------------------- | ------------------------------------------------------------------------ |
@@ -86,7 +100,7 @@ Do not start Stage 3 unless the validation and test splits each contain enough t
 
 ## Annotation Protocol
 
-Use CVAT to draw axis-aligned boxes. Export COCO JSON as the master annotation format. Learn the YOLO text format through a conversion script, but do not use YOLO to train this detector.
+Create axis-aligned boxes by visual inspection and store COCO JSON as the master annotation format. Save the producing agent, review status, and image hashes. Optional future human review can use CVAT. Do not use YOLO to produce labels or train this detector.
 
 Each label must follow these rules:
 
@@ -168,7 +182,7 @@ Use cross-entropy for the class prediction, including a `background` class, and 
 
 ## Evaluation Protocol
 
-Validation data decides architecture details, learning rate, augmentation, confidence threshold, NMS threshold, and stopping epoch. The test videos remain untouched until all decisions are frozen.
+Validation data decides architecture details, learning rate, augmentation, confidence threshold, NMS threshold, and stopping epoch. Test data may be sampled, annotated, and checked under frozen data rules, but must not guide model development. Test evaluation occurs only after model decisions are frozen. Self-reviewed AI labels are not independently verified ground truth.
 
 Report:
 
@@ -198,9 +212,9 @@ A 500-image dataset will be small and imbalanced. The detector may miss small, d
 
 A successful project is not defined by beating a benchmark. It is defined by a credible and reproducible answer to the project question.
 
-## Final Claim
+## Target Final Claim (Not Yet Achieved)
 
-> I curated a driving-video dataset of approximately 500 images from 25 source sequences, defined and applied bounding-box annotation rules, audited labels in a second pass, used leakage-safe video-level splits, trained a custom SSD-style detector, and analyzed its behavior on unseen driving videos.
+> I curated a driving-video dataset of approximately 500 images from 25 source sequences using AI-produced, visually self-reviewed labels, used video-level splits, trained a custom SSD-style binary detector on CPU, and analyzed its behavior on held-out videos. The labels lack an independent human audit.
 
 ## Future Extensions
 

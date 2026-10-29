@@ -1,1 +1,61 @@
-video_id,source_path_or_url,reviewed_at,car_present,truck_present,bus_present,lighting,weather,road_type,traffic_density,notes,keep_for_pilot,assigned_split
+candidate,video_id,lighting,weather_observation,road_type,traffic_density,notes,assigned_split
+1,0030f434-3eb4a3a9,day,dry-looking,urban intersection,moderate,Cars crossing and parked; changing viewpoints,train
+2,007c11bf-f6da335c,day,dry-looking,highway,moderate,Large trailer truck and cars; glare,train
+3,0045e757-088840fc,night,dry-looking,urban street,moderate,Parked cars and moving cars; oncoming glare,test
+4,0080b637-55f7930e,day,dry-looking,dense city,heavy,Queue behind large SUV; nearly stationary previews,not_selected
+5,0049e5b8-725e21a0,day,dry-looking,highway,light,Distant vehicles; strong final-frame exposure change,validation
+6,005cdef0-180a776c,day,overcast,arterial to highway ramp,moderate,Cars changing relative size; cloudy sky,train
+7,00091078-59817bb0,day,snow on ground,dense city,heavy,Bus and emergency car; visually related to candidate 59,not_selected
+8,0000f77c-cb820c98,dusk,dry-looking,urban intersection,moderate,Parked cars and crossing traffic,train
+9,002d290d-fa2a8964,day,dry-looking,city to tree-lined road,moderate,Cars and taxis; changing road context,test
+10,0024b742-acbed4fb,day,overcast,industrial street,moderate,Queue remains almost stationary,not_selected
+11,006382a3-4a442001,day,dry-looking,urban street,moderate,Cars and minivan; occasional windshield obstruction,train
+12,007693e6-c2a8b9a7,day,dry-looking,service station,light,Station forecourt rather than normal driving traffic,not_selected
+13,00618cec-ef92ac05,day,dry-looking,intersection and bridge works,light,Cars and trucks; later empty roadway,train
+14,0035afff-3295dbd6,night,dry-looking,urban avenue,moderate,"Bus, rental truck and cars; glare",validation
+15,0070bc56-49cf077c,night,dry-looking,urban avenue,heavy,Dense queue; shared source prefix with other night candidates,not_selected
+16,0075b179-8e09869a,day,snow on ground,urban arterial,moderate,Truck and cars at intersection,train
+17,002685b6-856c17f7,day,dry-looking,residential city street,moderate,Many parked cars and changing viewpoint,validation
+18,0062298d-cbbec2cd,night,wet-looking windshield,urban intersection,moderate,Cars and strong reflections; some emergency lights,train
+19,00134776-9123d227,night,dry-looking,urban avenue,moderate,Large dark vehicles; headlight glare,not_selected
+20,0001542f-5ce3cf52,night,dry-looking,urban street,moderate,Bright signs and emergency lights,not_selected
+21,0070bc56-4c0bb2d5,night,dry-looking,narrow urban street,heavy,Parked and moving cars; shared source prefix,not_selected
+22,00091078-84635cf2,day,snow on ground,dense city,heavy,Stationary car and truck; shared source prefix,not_selected
+23,00232de3-19eca24a,night,dry-looking,urban intersection,moderate,Cars and storefront lighting,not_selected
+24,00618cec-3bc5573e,day,dry-looking,urban arterial,moderate,Bus and truck; shares source prefix with candidate 13,not_selected
+25,007c01ea-ad9f940b,night,snow on ground,urban intersection,light,Cars and bright shops,not_selected
+26,00714cd3-48d6b290,dusk,dry-looking,narrow residential street,moderate,"Parked cars, van and passing traffic",train
+27,00268999-9f6d5823,day,dry-looking,industrial access road,light,Parked vehicles and distant cars,train
+28,00495359-27ce9c7e,day,dry-looking,urban intersection,moderate,Near-identical stationary previews,not_selected
+29,0001542f-ec815219,night,dry-looking,urban intersection,light,"Cars, van and strong lamp glare; shared prefix",not_selected
+30,00810e80-37641274,day,wet-looking road,industrial loading street,heavy,"Large trucks, parked cars and visible truncation",train
+31,00207869-046fa443,day,dry-looking,urban street,moderate,Parked cars and pickup; motorcycle out of scope,not_selected
+32,005ee183-0100ac18,day,dry-looking,urban avenue,moderate,"Cars, delivery van and some motion blur",not_selected
+33,0008a165-c48f4b3e,dusk,dry-looking,tree-lined arterial,moderate,Oncoming headlights and motion blur,not_selected
+34,00202076-9eaa8e42,dusk,dry-looking,busy urban intersection,heavy,Dense cars in multiple lanes,validation
+35,006fdb67-526bb14e,day,dry-looking,town commercial street,moderate,"Large coach, cars and out-of-scope bicycles",train
+36,00313a01-97de1f42,night,dry-looking,urban street,moderate,Parked cars with dark boundaries,not_selected
+37,002d290d-89f4e5c0,day,dry-looking,urban construction approach,moderate,"Cars, trucks and out-of-scope construction equipment",not_selected
+38,0081c36b-30bff234,day,dry-looking,urban street,moderate,Parked cars; windscreen reflections,not_selected
+39,001c5339-08faca55,night,dry-looking,wide urban intersection,moderate,Cars and glare with open-road sections,not_selected
+40,0077ccb8-d5778190,dusk,wet road,residential intersection,moderate,"Dark cars, vans and reflections",train
+41,00779058-517a4591,day,dry-looking,quiet town street,light,"Sparse cars, parking area and van",test
+42,002d290d-89d1aea8,day,dry-looking,dense city,moderate,"Bus, vans and truck; shares prefix with candidate 9",not_selected
+43,00067cfb-e535423e,day,dry-looking,dense city,heavy,"Cars, vans and emergency cars",not_selected
+44,006a4209-4f3bf6cf,day,dry-looking,residential city street,moderate,"Parked cars, pickup and container",not_selected
+45,0070bc56-7d01076a,night,dry-looking,urban avenue,heavy,Cars and large truck; shared source prefix,not_selected
+46,002ab96a-a96704f9,day,overcast,hilly residential city street,moderate,"Bus, parked cars and cross traffic",validation
+47,005ff190-5be4cdfa,night,dry-looking,highway,moderate,Cars and distant heavy vehicles,not_selected
+48,0048f391-2c5344eb,day,dry-looking,suburban residential street,light,"Sparse vehicles, strong shadows and late glare",train
+49,0033b19f-65613f7e,day,overcast,industrial arterial,heavy,Cars and large trucks,test
+50,004ea016-0b1932a7,day,dry-looking,urban arterial,heavy,"Cars, truck and strong backlighting",not_selected
+51,00488b40-0a8cf1a0,day,overcast,suburban arterial,moderate,Cars and vans,not_selected
+52,004071a4-ef4bf541,day,dry-looking,urban street,heavy,Parked cars and queue,not_selected
+53,004855fc-ff3946ad,day,dry-looking,urban arterial,moderate,"Cars, vans and severe glare",not_selected
+54,006a7635-c42f9f97,day,overcast,narrow urban street,heavy,Parked cars and windshield reflections,not_selected
+55,0024b742-83709bd4,day,overcast,arterial with road works,light,Nearby SUV then distant vehicles,train
+56,0000f77c-6257be58,day,dry-looking,access ramp and parking structure,moderate,Cars and strong shadow transitions; shared prefix,not_selected
+57,0070bc56-8d8cfd82,night,dry-looking,urban avenue,heavy,Cars and strong headlights; shared source prefix,not_selected
+58,007eddfc-bcaeb35b,day,snow on ground,industrial side street,heavy,Many parked cars and changing viewpoints,test
+59,00091078-875c1f73,day,snow on ground,dense city,heavy,Visibly same car and location as candidate 7,not_selected
+60,0035afff-bd191d6a,night,dry-looking,urban street,moderate,Parked cars and moving vehicles; shared prefix,not_selected

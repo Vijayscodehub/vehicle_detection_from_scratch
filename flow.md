@@ -32,5 +32,7 @@ user-approved time budget; do not promise an accuracy or successful convergence.
 
 ## Status
 
-Repository initialization and ignore-rule validation are complete. No frame
-selection, annotation, model implementation, training, or evaluation is complete.
+Repository initialization, raw-frame inventory, visual screening, video split,
+and 500-frame sampling are complete. All labels remain pending. No detector has
+been trained or evaluated. The training pilot contains exactly 75 of the selected
+training images, spread over six training videos.
