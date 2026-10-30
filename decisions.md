@@ -55,7 +55,7 @@ strength of reported performance claims.
 
 ## First Pilot Batch and CPU Diagnostic
 
-- 26 pilot images from two training videos are AI-reviewed, totaling 249
+- 39 pilot images from three training videos are AI-reviewed, totaling 322
   boxes. These labels remain subject to the eventual full-pilot rule freeze.
 - Source images, coordinate guides, overlay reviews, and selected raw-image
   zooms were inspected. Corrections include missed objects, a vegetation false

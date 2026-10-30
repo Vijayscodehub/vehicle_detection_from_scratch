@@ -9,14 +9,14 @@ The manifest, source hashes, annotations, and reports are tracked in Git.
 
 | Split | Selected images | AI-reviewed images | Awaiting reviewed labels |
 | --- | ---: | ---: | ---: |
-| Training | 300 | 26 | 274 |
+| Training | 300 | 39 | 261 |
 | Validation | 100 | 0 | 100 |
 | Test | 100 | 0 | 100 |
-| Total | 500 | 26 | 474 |
+| Total | 500 | 39 | 461 |
 
-The 26 reviewed images contain 249 boxes and come from two training videos. They
-are part of the 75-image training pilot, not an additional dataset. 49 pilot
-images and all 425 non-pilot images still require labeling and review. AI
+The 39 reviewed images contain 322 boxes and come from three training videos.
+They are part of the 75-image training pilot, not an additional dataset. 36
+pilot images and all 425 non-pilot images still require labeling and review. AI
 self-review is not an independent annotation-quality audit.
 
 ## Implemented and Checked

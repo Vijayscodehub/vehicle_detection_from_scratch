@@ -228,6 +228,71 @@
       "status": "reviewed",
       "notes": "AI second pass checked source directly. Replaced an erroneous empty-road box with the two partly overlapping foreground vehicles; box truck, ahead cars and visible opposing traffic boxed. Not independently audited.",
       "boxes": [[454, 191, 584, 301], [365, 231, 423, 286], [425, 231, 478, 272], [893, 176, 1280, 511], [895, 237, 1068, 354], [0, 197, 104, 278], [79, 220, 160, 275], [145, 218, 211, 269], [207, 218, 269, 267], [267, 221, 309, 259], [309, 220, 349, 256], [0, 224, 48, 273]]
+    },
+    "06_01": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Black SUV, pickup, white car and resolvable far traffic boxed; tiny targets excluded. Not independently audited.",
+      "boxes": [[238, 327, 360, 406], [455, 321, 532, 385], [410, 333, 459, 368], [524, 296, 552, 329], [137, 319, 179, 340], [86, 319, 111, 339], [0, 291, 35, 327]]
+    },
+    "06_03": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Black sedan, white car, pickup and resolvable parallel-road traffic boxed. Not independently audited.",
+      "boxes": [[198, 320, 305, 380], [405, 326, 453, 357], [465, 310, 529, 363], [542, 298, 572, 330], [132, 318, 171, 339], [84, 317, 110, 338], [0, 295, 33, 329]]
+    },
+    "06_04": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Cropped silver sedan, separate black sedan and size-eligible cars ahead boxed. Not independently audited.",
+      "boxes": [[0, 302, 336, 490], [300, 324, 370, 387], [456, 327, 495, 363], [503, 323, 542, 356], [536, 316, 564, 345], [573, 309, 601, 338], [604, 304, 629, 334]]
+    },
+    "06_06": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Cropped black sedan, white sedan and distinct adjacent cars boxed; tiny traffic excluded. Not independently audited.",
+      "boxes": [[0, 309, 133, 506], [321, 318, 526, 468], [486, 325, 534, 364], [535, 327, 568, 357], [575, 317, 607, 347], [610, 313, 638, 340], [638, 309, 668, 337]]
+    },
+    "06_07": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Minivan, separate black car, white sedan and eligible queue vehicles boxed. Not independently audited.",
+      "boxes": [[47, 296, 267, 418], [318, 313, 525, 467], [225, 319, 367, 412], [489, 325, 532, 363], [532, 326, 566, 356], [568, 316, 603, 346], [603, 311, 633, 340]]
+    },
+    "06_09": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay under overpass. Cropped left car and separate vehicles ahead boxed; tiny distant traffic excluded. Not independently audited.",
+      "boxes": [[283, 322, 371, 373], [497, 326, 556, 384], [578, 322, 624, 369], [0, 321, 130, 506], [426, 323, 459, 350], [461, 324, 489, 348]]
+    },
+    "06_11": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay on curving ramp. Cropped left vehicle, white sedan, dark car and eligible merge traffic boxed. Not independently audited.",
+      "boxes": [[519, 317, 574, 367], [575, 319, 629, 368], [0, 320, 127, 508], [400, 323, 431, 350], [433, 324, 460, 349], [461, 321, 492, 347]]
+    },
+    "06_12": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. White sedan, adjacent minivan, cropped right car and size-eligible distant cars boxed. Not independently audited.",
+      "boxes": [[430, 319, 559, 415], [86, 294, 286, 390], [1202, 448, 1280, 605], [571, 322, 609, 352], [609, 320, 639, 349], [642, 319, 670, 346]]
+    },
+    "06_14": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay beneath overpass. Minivan and visible vehicles ahead boxed; small motion-blurred targets excluded. Not independently audited.",
+      "boxes": [[282, 321, 368, 372], [497, 323, 555, 382], [578, 320, 624, 369], [412, 325, 447, 351], [449, 324, 479, 350]]
+    },
+    "06_15": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay on curved ramp. White sedan, dark car and resolvable vehicles near bend boxed. Not independently audited.",
+      "boxes": [[519, 318, 575, 368], [576, 318, 630, 368], [393, 323, 427, 350], [428, 322, 456, 348], [458, 320, 487, 347]]
+    },
+    "06_17": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. White sedan and size-eligible cars ahead boxed; smaller distant cars excluded. Not independently audited.",
+      "boxes": [[390, 322, 446, 361], [346, 323, 381, 351], [315, 323, 342, 346], [449, 322, 476, 347]]
+    },
+    "06_18": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. White sedan and resolvable cars near bend boxed; far targets below 20px cutoff excluded. Not independently audited.",
+      "boxes": [[390, 322, 447, 361], [347, 323, 382, 351], [315, 323, 342, 346]]
+    },
+    "06_20": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. White sedan, adjacent dark car and resolvable partially occluded targets boxed. Not independently audited.",
+      "boxes": [[390, 319, 447, 362], [348, 322, 383, 352], [315, 322, 342, 347]]
     }
   }
 }
