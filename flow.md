@@ -38,11 +38,10 @@ Repository initialization, raw-frame inventory, visual screening, video split,
 and 500-frame sampling are complete. The detector, CPU training/evaluation code,
 and dataset safeguards are implemented, with 21 focused tests passing.
 
-51 of 75 pilot images have AI-produced, visually self-reviewed labels (375
-boxes), across four training videos. A fourth video has 12 draft-only dusk labels
-(109 boxes) that are not training-ready. The last 12 pilot images are not yet
-annotated. The remaining 425 non-pilot images are also unreviewed. Annotation
-rules have not passed the full pilot gate.
+All 75 pilot images have AI-produced, visually self-reviewed labels (514 boxes)
+across six training videos. Annotation guideline v0.3 is frozen after the one
+planned pilot revision. The remaining 425 selected images (225 training, 100
+validation, 100 test) need annotation and review.
 
 A four-image training-only overfit diagnostic ran for 300 CPU steps. Loss fell
 from 8.3101 to 0.0345; prediction overlays were visually inspected. This is not a

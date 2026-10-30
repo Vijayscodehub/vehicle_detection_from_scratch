@@ -53,15 +53,15 @@ strength of reported performance claims.
   prediction images. Raw datasets, curated image collections, checkpoints,
   environments, and run logs remain ignored.
 
-## First Pilot Batch and CPU Diagnostic
+## Completed Pilot and CPU Diagnostic
 
-- 51 pilot images from four training videos are AI-reviewed, totaling 375
-  boxes. These labels remain subject to the eventual full-pilot rule freeze.
-- A fourth pilot video has 12 draft-only dusk annotations (109 boxes). Overlay review exposed
-  speculative boxes over empty road/house fronts; these were removed. The batch
-  remains draft and is excluded by the training loader until a reliable second
-  visual pass is complete.
-- The sixth and final pilot video still has 12 unannotated pilot images.
+- All 75 pilot images from six training videos are AI-reviewed, totaling 514
+  boxes. Annotation guideline v0.3 is now frozen for the remaining data.
+- Dusk/night overlay review removed false boxes on pedestrians, houses, empty
+  roadway, headlight glare, and reflections. Labels are still AI self-reviewed,
+  not independently audited.
+- The remaining 425 selected images (225 training, 100 validation, 100 test)
+  are pending. Full-data training remains blocked until split labels are reviewed.
 - Source images, coordinate guides, overlay reviews, and selected raw-image
   zooms were inspected. Corrections include missed objects, a vegetation false
   label, undersized fragments, overlapping targets, and box boundaries.

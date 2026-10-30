@@ -80,27 +80,26 @@ pixel boxes. Draft and pending images are never treated as reviewed negatives.
 
 | Label state | Images | Boxes | Meaning |
 | --- | ---: | ---: | --- |
-| AI-reviewed | 51 | 375 | Visually checked against raw frames and overlays; training split only |
-| Draft | 12 | 109 | Dusk labels needing more review; excluded from training |
-| Pending | 437 | 0 | No label record yet |
+| AI-reviewed | 75 | 514 | Visually checked against raw frames and overlays; training split only |
+| Draft | 0 | 0 | None |
+| Pending | 425 | 0 | Remaining train, validation, and test images |
 | **Total** | **500** |  |  |
 
-- The 51 reviewed images are spread over four training videos and are part of the
-  75-image pilot, not extra images.
-- The 12 draft frames come from a fifth pilot video. Review found speculative
-  boxes over empty roadway and house fronts; those boxes were removed. The
-  remaining labels have not been accepted as training-ready.
-- Twelve pilot frames from the sixth training video remain unannotated.
-- The other 425 selected frames remain unannotated, including all 100 validation
-  and all 100 test frames.
+- All 75 reviewed images are spread over six training videos and are part of the
+  300-image training split, not extra images.
+- Dusk/night overlay reviews removed or corrected boxes on pedestrians, houses,
+  empty roadway, headlight glare, and reflections.
+- Annotation guideline v0.3 is frozen after the one planned pilot revision.
+- The other 225 training frames and all 100 validation and 100 test frames remain
+  unannotated.
 - Annotation tooling produces coordinate guides, raw-frame views, box overlays,
   validation checks, and COCO JSON exports. Boxes must be at least 20 x 20 source
   pixels and stay within the image.
 - Exports record that annotations are AI-produced and lack an independent human
   audit. Low-light glare, occlusion, and tiny distant vehicles are known risks.
 
-**Why full training is still blocked:** 449 images are not in the reviewed state
-(12 draft and 437 pending). Treating them as empty-label images would incorrectly
+**Why full training is still blocked:** 425 images are not in the reviewed state.
+Treating them as empty-label images would incorrectly
 teach the detector that visible vehicles are background. Validation and test also
 need reviewed boxes before their metrics mean anything. This is why the current
 pipeline rejects full-data training rather than producing a misleading run.
@@ -148,24 +147,15 @@ memorization and must not be presented as unseen-video performance.
 
 The project has local commits for initialization, dataset preparation, annotation
 tools, detector implementation, report tracking, training/evaluation safeguards,
-the overfit diagnostic, and the first five pilot-video batches. The repository
+the overfit diagnostic, six pilot-video batches, and the frozen pilot rules. The repository
 has no remote push as part of this work. The exact recent commit list is in
 [`status.md`](status.md).
 
 ## Not Completed Yet
 
-- Revisit and resolve the 12 draft dusk annotations. **Why:** the overlay review
-  revealed speculative boxes on background structures; accepting them would
-  weaken label quality.
-- Annotate and review the last 12 images in the 75-image pilot. **Why:** pilot
-  examples span six training videos, allowing annotation rules to be tested on
-  more than one scene before they are frozen.
-- Freeze the annotation rules after a review of the complete pilot. **Why:** rules
-  need to be stable before labeling the remaining data to avoid inconsistent
-  definitions across images.
-- Annotate and review the remaining 425 images. **Why:** this completes the
-  planned 500-image set and provides training examples plus reference labels for
-  validation and final test measurement.
+- Annotate and review the remaining 425 images under frozen guideline v0.3.
+  **Why:** boxes are needed for training, validation-based experiment choices,
+  and a held-out test measurement.
 - Complete dataset-wide quality and split checks with all labels reviewed.
   **Why:** a credible detector metric depends on valid boxes and leakage-safe
   splits, not only code that runs.

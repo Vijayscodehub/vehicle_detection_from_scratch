@@ -9,16 +9,15 @@ The manifest, source hashes, annotations, and reports are tracked in Git.
 
 | Split | Selected | Reviewed | Draft | Pending |
 | --- | ---: | ---: | ---: | ---: |
-| Training | 300 | 51 | 12 | 237 |
+| Training | 300 | 75 | 0 | 225 |
 | Validation | 100 | 0 | 0 | 100 |
 | Test | 100 | 0 | 0 | 100 |
-| Total | 500 | 51 | 12 | 437 |
+| Total | 500 | 75 | 0 | 425 |
 
-The 51 reviewed images contain 375 boxes and come from four training videos.
-They are part of the 75-image training pilot, not an additional dataset. One
-other pilot video has 12 draft-only dusk annotations (109 boxes); these are not
-eligible for training. The final pilot video has 12 images not yet annotated.
-The remaining 425 non-pilot images are also unreviewed. AI self-review is not an
+The 75-image pilot contains 514 AI-reviewed boxes across six training videos.
+It is part of the 300 training images, not additional data. Annotation guideline
+v0.3 is frozen after the planned single pilot revision. The remaining 425 images
+(225 train, 100 validation, 100 test) need labels. AI self-review is not an
 independent annotation-quality audit.
 
 ## Implemented and Checked
@@ -45,11 +44,10 @@ This is memorization on four similar frames, not evidence of unseen-video qualit
 
 ## Remaining Before Version 1 Completion
 
-1. Finish the 75-image pilot, review rules, and apply any frozen-rule corrections.
-2. Label and review all remaining selected images; validate the completed dataset.
-3. Run the full CPU baseline and controlled augmentation experiment.
-4. Inspect validation predictions after each experiment and record error analysis.
-5. Freeze the final validation-selected model and operating threshold.
-6. Evaluate once on test data and write the final reproducible results report.
+1. Label and review the remaining 425 images, then validate the dataset.
+2. Run the full CPU baseline and controlled augmentation experiment.
+3. Inspect validation predictions after each experiment and record error analysis.
+4. Freeze the final validation-selected model and operating threshold.
+5. Evaluate once on test data and write the final reproducible results report.
 
 There are no validation metrics, final test metrics, or final model claims yet.

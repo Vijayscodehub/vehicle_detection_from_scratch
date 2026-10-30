@@ -295,63 +295,63 @@
       "boxes": [[390, 319, 447, 362], [348, 322, 383, 352], [315, 322, 342, 347]]
     },
     "08_01": {
-      "status": "draft",
-      "notes": "Dusk intersection. Boxes are limited to vehicles visible in the enlarged raw crop; review status remains draft.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, center crop and overlay. Boxes limited to visible curbside and moving vehicle bodies; glare/reflections excluded. Not independently audited.",
       "boxes": [[236, 337, 324, 405], [315, 339, 388, 385], [465, 333, 546, 390], [703, 300, 801, 380], [1092, 326, 1280, 382], [0, 337, 52, 399], [396, 338, 438, 374]]
     },
     "08_03": {
-      "status": "draft",
-      "notes": "Dusk residential street. Enlarged crop confirms taxi, nearby dark car, black minivan, distant headlight vehicle, and right-curb vehicles; remaining uncertain dark forms excluded pending review.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged crop and overlay. Taxi, dark car, minivan and clearly visible curbside vehicles boxed; uncertain dark forms excluded. Not independently audited.",
       "boxes": [[0, 339, 90, 432], [112, 341, 285, 425], [296, 342, 359, 398], [387, 322, 577, 390], [675, 322, 730, 366], [702, 315, 802, 380], [828, 280, 993, 408], [1104, 298, 1280, 396]]
     },
     "08_04": {
-      "status": "draft",
-      "notes": "Dusk street with large foreground sedan, separate dark car and parked rows. Inspect overlaps on both curbs.",
-      "boxes": [[0, 304, 338, 490], [300, 323, 369, 390], [405, 331, 475, 377], [489, 327, 542, 369], [554, 324, 607, 365], [610, 318, 655, 357], [655, 312, 698, 352], [711, 305, 755, 348], [760, 298, 803, 343], [806, 291, 851, 337], [856, 285, 914, 332], [910, 276, 1002, 365], [1000, 278, 1112, 372], [1106, 301, 1280, 434], [0, 330, 48, 390], [150, 334, 223, 388]]
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed speculative boxes over road/frontage; retained the cropped car, sedan, taxi, oncoming car, van and far-right car. Not independently audited.",
+      "boxes": [[0, 330, 60, 400], [198, 332, 322, 404], [315, 328, 390, 396], [462, 324, 550, 394], [700, 298, 810, 386], [1100, 296, 1280, 438]]
     },
     "08_06": {
-      "status": "draft",
-      "notes": "Dusk residential road. First pass on parked curb vehicles and moving traffic; dark cars merge with shadows and require close overlay review.",
-      "boxes": [[0, 342, 79, 422], [131, 334, 205, 389], [250, 330, 324, 382], [334, 325, 413, 379], [429, 321, 505, 375], [517, 317, 584, 370], [605, 313, 667, 366], [680, 309, 741, 362], [744, 300, 805, 356], [806, 286, 900, 362], [884, 278, 972, 365], [963, 275, 1047, 361], [1036, 268, 1131, 359], [1117, 258, 1280, 414], [0, 327, 55, 379]]
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed boxes over empty left-side houses and road; retained oncoming car and distinct right-curb vehicles. Not independently audited.",
+      "boxes": [[540, 297, 631, 367], [705, 305, 777, 361], [772, 294, 849, 362], [840, 282, 933, 370], [918, 269, 1010, 372], [1000, 256, 1280, 463]]
     },
     "08_08": {
-      "status": "draft",
-      "notes": "Dusk street with right-side parked line and left-side vehicles. First pass excludes indistinct tiny targets; overlay review pending.",
-      "boxes": [[0, 334, 90, 419], [110, 329, 181, 382], [192, 324, 266, 379], [277, 320, 348, 375], [358, 316, 424, 370], [438, 313, 493, 365], [500, 309, 548, 360], [558, 305, 605, 356], [617, 301, 663, 350], [670, 297, 717, 346], [715, 285, 786, 355], [779, 278, 869, 361], [859, 274, 952, 367], [943, 266, 1044, 369], [1037, 252, 1152, 385], [1141, 241, 1280, 448]]
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed evenly spaced boxes over houses/road; retained distinguishable right-curb vehicles and excluded tiny distant targets. Not independently audited.",
+      "boxes": [[735, 304, 814, 376], [800, 284, 891, 386], [878, 269, 1002, 405], [985, 253, 1134, 410], [1117, 246, 1280, 455]]
     },
     "08_10": {
-      "status": "draft",
-      "notes": "Dusk residential street approaching intersection. First pass on parked cars both sides and headlight vehicles; verify blurred far targets.",
-      "boxes": [[0, 336, 81, 414], [87, 332, 163, 382], [164, 328, 241, 378], [242, 324, 314, 373], [317, 320, 382, 368], [382, 317, 438, 365], [438, 313, 490, 361], [494, 309, 542, 356], [545, 305, 590, 351], [592, 301, 639, 346], [641, 296, 690, 343], [690, 289, 750, 342], [742, 278, 824, 354], [818, 271, 915, 359], [908, 265, 1006, 362], [1001, 252, 1110, 376], [1100, 248, 1280, 438]]
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed speculative pavement/house-front boxes; retained left cross-street cars and the right-curb queue. Not independently audited.",
+      "boxes": [[0, 304, 95, 380], [175, 299, 291, 359], [284, 295, 386, 357], [388, 292, 500, 356], [780, 280, 872, 372], [856, 267, 975, 382], [965, 256, 1104, 416], [1095, 250, 1280, 466]]
     },
     "08_11": {
-      "status": "draft",
-      "notes": "Dusk intersection. Enlarged right crop confirms the foreground SUV and adjacent cropped sedan; visible opposite-curb cars retained. Other boxes removed because overlays placed them on houses/empty road.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Foreground SUV, adjacent sedan and two visible opposite-curb cars retained; boxes on houses/empty road removed. Not independently audited.",
       "boxes": [[132, 335, 281, 395], [315, 327, 420, 379], [850, 262, 1006, 458], [1000, 301, 1085, 396], [1080, 320, 1280, 513]]
     },
     "08_13": {
-      "status": "draft",
-      "notes": "Dusk cross street. Crop confirms two opposite-curb cars and two overlapping foreground vehicles; speculative boxes across house frontage removed.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Two opposite-curb cars and two foreground vehicles boxed; speculative house-front boxes removed. Not independently audited.",
       "boxes": [[132, 336, 280, 394], [302, 328, 420, 379], [850, 258, 1009, 461], [1002, 300, 1096, 400], [1080, 319, 1280, 512]]
     },
     "08_15": {
-      "status": "draft",
-      "notes": "Dusk intersection. Enlarged crop confirms foreground SUV and adjacent sedan; only clearly visible opposite-curb vehicles retained.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Foreground SUV, adjacent sedan and clearly visible curbside cars retained. Not independently audited.",
       "boxes": [[118, 335, 280, 397], [289, 328, 412, 379], [844, 261, 1015, 463], [1005, 300, 1090, 402], [1082, 318, 1280, 520]]
     },
     "08_17": {
-      "status": "draft",
-      "notes": "Dusk intersection after signal change. Raw crop confirms opposite-curb cars, foreground SUV, cropped sedan, and one cross-street car; empty-frontage estimates removed.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Opposite-curb cars, foreground SUV, cropped sedan and cross-street car boxed; empty-frontage estimates removed. Not independently audited.",
       "boxes": [[118, 335, 281, 396], [287, 327, 410, 379], [844, 259, 1015, 463], [1005, 299, 1094, 401], [1085, 318, 1280, 520]]
     },
     "08_18": {
-      "status": "draft",
-      "notes": "Dusk arterial. Enlarged crop confirms a right-curb queue of vehicles including a large SUV/van and cropped foreground car; empty-road and house-front estimates removed.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Visible right-curb queue, large SUV/van and cropped foreground car boxed; empty-road/house-front estimates removed. Not independently audited.",
       "boxes": [[735, 302, 822, 378], [805, 280, 904, 388], [886, 265, 1077, 455], [1050, 300, 1160, 415], [1140, 278, 1280, 470]]
     },
     "08_20": {
-      "status": "draft",
-      "notes": "Dusk signalized intersection. Enlarged crop confirms the right-side queue and cross-street car; labels remain draft pending full-frame review.",
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame, enlarged right crop and overlay. Right-side queue and visible cross-street vehicles boxed; uncertain glare points excluded. Not independently audited.",
       "boxes": [[785, 295, 870, 375], [850, 276, 960, 390], [930, 255, 1085, 455], [1060, 280, 1168, 420], [1145, 285, 1280, 470]]
     },
     "18_01": {
@@ -413,6 +413,66 @@
       "status": "reviewed",
       "notes": "AI second pass reviewed source and overlay. Sedan, large SUV and cross-traffic vehicles with visible bodies boxed; uncertain glare points excluded. Not independently audited.",
       "boxes": [[326, 256, 612, 448], [835, 202, 1280, 505], [128, 255, 234, 339], [241, 254, 328, 330]]
+    },
+    "40_01": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed the pedestrian box; parked van and size-eligible curbside cars retained. Tiny distant cars and reflections excluded. Not independently audited.",
+      "boxes": [[0, 309, 272, 449], [307, 315, 399, 398], [558, 320, 620, 370], [618, 319, 680, 388], [702, 305, 1002, 555], [978, 298, 1280, 615]]
+    },
+    "40_03": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed the pedestrian box; van and distinct parked cars retained. Glare-only lights excluded. Not independently audited.",
+      "boxes": [[0, 309, 270, 455], [302, 310, 397, 397], [555, 317, 620, 371], [618, 314, 682, 390], [699, 302, 1004, 558], [980, 297, 1280, 614]]
+    },
+    "40_04": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed the pedestrian box; left van and clearly visible curbside vehicles retained. Tiny/dark fragments excluded. Not independently audited.",
+      "boxes": [[0, 303, 274, 466], [295, 310, 388, 399], [550, 316, 617, 371], [616, 313, 681, 391], [699, 299, 1005, 561], [981, 295, 1280, 612]]
+    },
+    "40_06": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Cropped minivan and resolvable parked cars boxed; distant traffic below cutoff excluded. Not independently audited.",
+      "boxes": [[0, 293, 284, 493], [288, 306, 363, 399], [397, 312, 456, 372], [515, 316, 577, 369], [574, 313, 638, 389], [640, 308, 707, 390], [710, 299, 834, 412], [829, 286, 1015, 455]]
+    },
+    "40_08": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Cropped left cars, parked vehicles and right-side white sedan boxed; road reflections excluded. Not independently audited.",
+      "boxes": [[0, 354, 188, 447], [180, 335, 275, 405], [291, 325, 367, 390], [421, 318, 494, 375], [492, 316, 555, 366], [551, 313, 606, 360], [610, 308, 669, 357], [667, 303, 733, 360], [812, 325, 1138, 504]]
+    },
+    "40_10": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed boxes over house frontage/empty road; retained visible parked and cross-traffic cars. Headlight glare not boxed. Not independently audited.",
+      "boxes": [[0, 340, 167, 443], [170, 326, 271, 398], [284, 321, 365, 382], [392, 316, 466, 369], [470, 313, 534, 364], [535, 309, 594, 359], [594, 304, 654, 355], [651, 298, 718, 356]]
+    },
+    "40_11": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay at red light. Parked cars with visible bodies boxed; signal lamps and reflections excluded. Not independently audited.",
+      "boxes": [[426, 320, 531, 385], [520, 322, 562, 378], [581, 326, 615, 360], [622, 324, 655, 357], [664, 321, 698, 354]]
+    },
+    "40_13": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Removed boxes on empty right-side frontage; retained parked cars and one crossing vehicle. Not independently audited.",
+      "boxes": [[424, 320, 530, 385], [520, 320, 562, 378], [610, 326, 785, 411]]
+    },
+    "40_15": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay after cross traffic. Parked cars and visible moving vehicle boxed; reflections and signal lights excluded. Not independently audited.",
+      "boxes": [[422, 320, 530, 385], [518, 321, 560, 378], [593, 323, 636, 359], [639, 321, 678, 355], [681, 318, 716, 352]]
+    },
+    "40_17": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay. Crossing vehicle boxed; removed box on empty right frontage. Pedestrian at left is out of scope. Not independently audited.",
+      "boxes": [[423, 320, 530, 385], [519, 321, 561, 378], [610, 326, 785, 411]]
+    },
+    "40_18": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay after traffic clears. Parked vehicles with visible bodies boxed; light reflections excluded. Not independently audited.",
+      "boxes": [[423, 320, 530, 385], [519, 321, 561, 378], [590, 322, 635, 359], [637, 320, 680, 355], [682, 317, 718, 352]]
+    },
+    "40_20": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed raw frame and overlay with passing traffic. Visible vehicles boxed; pedestrians, headlight glare and road reflections excluded. Not independently audited.",
+      "boxes": [[422, 320, 530, 385], [519, 321, 562, 378], [610, 326, 785, 411], [814, 324, 865, 362], [870, 321, 911, 357]]
     }
   }
 }

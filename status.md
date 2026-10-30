@@ -33,25 +33,22 @@ unrelated.
 
 | Split | Videos | Selected images | Reviewed | Draft | Pending |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Training | 15 | 300 | 51 | 12 | 237 |
+| Training | 15 | 300 | 75 | 0 | 225 |
 | Validation | 5 | 100 | 0 | 0 | 100 |
 | Test | 5 | 100 | 0 | 0 | 100 |
-| **Total** | **25** | **500** | **51** | **12** | **437** |
+| **Total** | **25** | **500** | **75** | **0** | **425** |
 
 The manifest stores source video, source frame position, split, pilot flag,
 dimensions, paths, and SHA-256. All selected images decoded, and no duplicate
 sample hash was found. The 75-image pilot is included in the 300 training images:
 
-- 51 pilot images have AI-reviewed labels, totaling **375 vehicle boxes**, across
-  four training videos.
-- 12 dusk images from a fifth pilot video have **draft-only labels (109 boxes)**.
-  Overlay review exposed speculative boxes over houses and empty roadway. Those
-  were removed; the remaining labels are not training-ready.
-- The last 12 pilot images from the sixth training video are not yet annotated.
-- The other 425 selected images are not yet annotated.
-- Total not eligible as reviewed labels: 449 images (12 draft + 437 pending).
-- All 51 reviewed images are in training. Validation and test currently have no
-  reviewed annotations.
+- All 75 pilot images have AI-reviewed labels, totaling **514 vehicle boxes**,
+  across six training videos.
+- Annotation guideline v0.3 is frozen after the one planned pilot revision.
+- The remaining 425 selected images are pending: 225 training, 100 validation,
+  and 100 test. No validation or test labels exist yet.
+- All reviewed pilot images are in training. AI self-review is not an independent
+  human annotation audit.
 
 The full training/validation loader refuses any split with an unreviewed image.
 Draft labels must never be treated as background examples. The dedicated
@@ -126,34 +123,27 @@ The repository is local-only; no remote is configured or used. Recent milestones
 
 ## Exact Next Steps
 
-1. Revisit the 12 draft dusk frames from candidate 08. Inspect the raw image and
-   zoom/overlay; correct or remove each unsupported box. If the scene remains too
-   ambiguous, exclude and replace that frame with another frame from the same
-   training video according to the frozen sampling/replacement rules. Do not
-   promote the entire batch simply because the JSON validates.
-2. Annotate and review the last 12 pilot frames from candidate 40. Save their
-   first-pass boxes, review overlays, and corrections. Keep pilot membership at
-   75 unless a documented image exclusion requires a same-split replacement.
-3. Review all 75 pilot images together. Revise annotation rules once, freeze the
-   resulting version, and correct any pilot labels affected by that revision.
-4. Only after the pilot rules are frozen, annotate and second-pass review the
-   remaining 225 training images, 100 validation images, and 100 test images.
-   Preserve video-level splits; never move test images based on predictions.
-5. Run dataset checks: all images decode, boxes are in bounds and at least 20x20
+1. Annotate and second-pass review the remaining 225 training images with frozen
+  guideline v0.3. Preserve the existing video-level split.
+2. Annotate and review the 100 validation images. Use them for experiment
+  decisions only after their labels pass the same checks.
+3. Annotate and review the 100 test images under frozen rules, then keep them
+  outside training and model selection until final evaluation.
+4. Run dataset checks: all images decode, boxes are in bounds and at least 20x20
    source pixels, all in-scope vehicles are labeled, hashes match, and split/video
    isolation remains intact. Require all labels reviewed before full-data export.
-6. Confirm the model can overfit a small diverse training subset. Keep this
-   diagnostic separate from validation and test metrics.
-7. Train the baseline and augmentation experiment on CPU with the same frozen
+5. Run a small diverse training-only overfit diagnostic. Keep it separate from
+  validation and test metrics.
+6. Train the baseline and augmentation experiment on CPU with the same frozen
    data and seed. Inspect and save validation prediction overlays after each
    experiment. Record false positives, missed vehicles, duplicate detections,
    small/distant targets, and glare/occlusion errors.
-8. Select the model and confidence threshold using validation only. Freeze the
+7. Select the model and confidence threshold using validation only. Freeze the
    checkpoint/configuration and hashes before the final test evaluation.
-9. Run the guarded test evaluation once. Save AP@0.5, precision/recall, counts,
+8. Run the guarded test evaluation once. Save AP@0.5, precision/recall, counts,
    curves, representative errors, and the AI-label limitation.
-10. Update this file, `reports/progress.md`, README, and workflow notes; run all
-    tests; commit each completed milestone locally.
+9. Update this file, `till_now.md`, `reports/progress.md`, README, and workflow
+  notes; run all tests; commit each completed milestone locally.
 
 ## Commands
 
