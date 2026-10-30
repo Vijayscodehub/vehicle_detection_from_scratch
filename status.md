@@ -112,6 +112,7 @@ expected to be short compared with annotation.
 
 The repository is local-only; no remote is configured or used. Recent milestones:
 
+- `b23f945` Review fifth pilot video and add detailed pause-resume status.
 - `c39ef5e` Save fourth pilot video as draft pending dusk-label review.
 - `321f54f` Review third pilot video with 73 additional vehicle boxes.
 - `4ea03d9` Review second pilot video with 123 additional vehicle boxes.
