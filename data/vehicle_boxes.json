@@ -293,6 +293,66 @@
       "status": "reviewed",
       "notes": "AI second pass reviewed source and overlay. White sedan, adjacent dark car and resolvable partially occluded targets boxed. Not independently audited.",
       "boxes": [[390, 319, 447, 362], [348, 322, 383, 352], [315, 322, 342, 347]]
+    },
+    "08_01": {
+      "status": "draft",
+      "notes": "Dusk intersection. Boxes are limited to vehicles visible in the enlarged raw crop; review status remains draft.",
+      "boxes": [[236, 337, 324, 405], [315, 339, 388, 385], [465, 333, 546, 390], [703, 300, 801, 380], [1092, 326, 1280, 382], [0, 337, 52, 399], [396, 338, 438, 374]]
+    },
+    "08_03": {
+      "status": "draft",
+      "notes": "Dusk residential street. Enlarged crop confirms taxi, nearby dark car, black minivan, distant headlight vehicle, and right-curb vehicles; remaining uncertain dark forms excluded pending review.",
+      "boxes": [[0, 339, 90, 432], [112, 341, 285, 425], [296, 342, 359, 398], [387, 322, 577, 390], [675, 322, 730, 366], [702, 315, 802, 380], [828, 280, 993, 408], [1104, 298, 1280, 396]]
+    },
+    "08_04": {
+      "status": "draft",
+      "notes": "Dusk street with large foreground sedan, separate dark car and parked rows. Inspect overlaps on both curbs.",
+      "boxes": [[0, 304, 338, 490], [300, 323, 369, 390], [405, 331, 475, 377], [489, 327, 542, 369], [554, 324, 607, 365], [610, 318, 655, 357], [655, 312, 698, 352], [711, 305, 755, 348], [760, 298, 803, 343], [806, 291, 851, 337], [856, 285, 914, 332], [910, 276, 1002, 365], [1000, 278, 1112, 372], [1106, 301, 1280, 434], [0, 330, 48, 390], [150, 334, 223, 388]]
+    },
+    "08_06": {
+      "status": "draft",
+      "notes": "Dusk residential road. First pass on parked curb vehicles and moving traffic; dark cars merge with shadows and require close overlay review.",
+      "boxes": [[0, 342, 79, 422], [131, 334, 205, 389], [250, 330, 324, 382], [334, 325, 413, 379], [429, 321, 505, 375], [517, 317, 584, 370], [605, 313, 667, 366], [680, 309, 741, 362], [744, 300, 805, 356], [806, 286, 900, 362], [884, 278, 972, 365], [963, 275, 1047, 361], [1036, 268, 1131, 359], [1117, 258, 1280, 414], [0, 327, 55, 379]]
+    },
+    "08_08": {
+      "status": "draft",
+      "notes": "Dusk street with right-side parked line and left-side vehicles. First pass excludes indistinct tiny targets; overlay review pending.",
+      "boxes": [[0, 334, 90, 419], [110, 329, 181, 382], [192, 324, 266, 379], [277, 320, 348, 375], [358, 316, 424, 370], [438, 313, 493, 365], [500, 309, 548, 360], [558, 305, 605, 356], [617, 301, 663, 350], [670, 297, 717, 346], [715, 285, 786, 355], [779, 278, 869, 361], [859, 274, 952, 367], [943, 266, 1044, 369], [1037, 252, 1152, 385], [1141, 241, 1280, 448]]
+    },
+    "08_10": {
+      "status": "draft",
+      "notes": "Dusk residential street approaching intersection. First pass on parked cars both sides and headlight vehicles; verify blurred far targets.",
+      "boxes": [[0, 336, 81, 414], [87, 332, 163, 382], [164, 328, 241, 378], [242, 324, 314, 373], [317, 320, 382, 368], [382, 317, 438, 365], [438, 313, 490, 361], [494, 309, 542, 356], [545, 305, 590, 351], [592, 301, 639, 346], [641, 296, 690, 343], [690, 289, 750, 342], [742, 278, 824, 354], [818, 271, 915, 359], [908, 265, 1006, 362], [1001, 252, 1110, 376], [1100, 248, 1280, 438]]
+    },
+    "08_11": {
+      "status": "draft",
+      "notes": "Dusk intersection. Enlarged right crop confirms the foreground SUV and adjacent cropped sedan; visible opposite-curb cars retained. Other boxes removed because overlays placed them on houses/empty road.",
+      "boxes": [[132, 335, 281, 395], [315, 327, 420, 379], [850, 262, 1006, 458], [1000, 301, 1085, 396], [1080, 320, 1280, 513]]
+    },
+    "08_13": {
+      "status": "draft",
+      "notes": "Dusk cross street. Crop confirms two opposite-curb cars and two overlapping foreground vehicles; speculative boxes across house frontage removed.",
+      "boxes": [[132, 336, 280, 394], [302, 328, 420, 379], [850, 258, 1009, 461], [1002, 300, 1096, 400], [1080, 319, 1280, 512]]
+    },
+    "08_15": {
+      "status": "draft",
+      "notes": "Dusk intersection. Enlarged crop confirms foreground SUV and adjacent sedan; only clearly visible opposite-curb vehicles retained.",
+      "boxes": [[118, 335, 280, 397], [289, 328, 412, 379], [844, 261, 1015, 463], [1005, 300, 1090, 402], [1082, 318, 1280, 520]]
+    },
+    "08_17": {
+      "status": "draft",
+      "notes": "Dusk intersection after signal change. Raw crop confirms opposite-curb cars, foreground SUV, cropped sedan, and one cross-street car; empty-frontage estimates removed.",
+      "boxes": [[118, 335, 281, 396], [287, 327, 410, 379], [844, 259, 1015, 463], [1005, 299, 1094, 401], [1085, 318, 1280, 520]]
+    },
+    "08_18": {
+      "status": "draft",
+      "notes": "Dusk arterial. Enlarged crop confirms a right-curb queue of vehicles including a large SUV/van and cropped foreground car; empty-road and house-front estimates removed.",
+      "boxes": [[735, 302, 822, 378], [805, 280, 904, 388], [886, 265, 1077, 455], [1050, 300, 1160, 415], [1140, 278, 1280, 470]]
+    },
+    "08_20": {
+      "status": "draft",
+      "notes": "Dusk signalized intersection. Enlarged crop confirms the right-side queue and cross-street car; labels remain draft pending full-frame review.",
+      "boxes": [[785, 295, 870, 375], [850, 276, 960, 390], [930, 255, 1085, 455], [1060, 280, 1168, 420], [1145, 285, 1280, 470]]
     }
   }
 }

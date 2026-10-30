@@ -15,9 +15,10 @@ The manifest, source hashes, annotations, and reports are tracked in Git.
 | Total | 500 | 39 | 461 |
 
 The 39 reviewed images contain 322 boxes and come from three training videos.
-They are part of the 75-image training pilot, not an additional dataset. 36
-pilot images and all 425 non-pilot images still require labeling and review. AI
-self-review is not an independent annotation-quality audit.
+They are part of the 75-image training pilot, not an additional dataset. A
+fourth video has 12 draft-only dusk annotations, none eligible for training.
+All 36 remaining pilot images lack reviewed labels; 425 non-pilot images also
+remain unreviewed. AI self-review is not an independent annotation-quality audit.
 
 ## Implemented and Checked
 
