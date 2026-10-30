@@ -353,6 +353,66 @@
       "status": "draft",
       "notes": "Dusk signalized intersection. Enlarged crop confirms the right-side queue and cross-street car; labels remain draft pending full-frame review.",
       "boxes": [[785, 295, 870, 375], [850, 276, 960, 390], [930, 255, 1085, 455], [1060, 280, 1168, 420], [1145, 285, 1280, 470]]
+    },
+    "18_01": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Stopped black sedan, silver SUV and two size-eligible oncoming cars boxed; glare-only fragments excluded. Not independently audited.",
+      "boxes": [[451, 252, 677, 421], [746, 241, 1000, 406], [194, 268, 286, 323], [329, 269, 408, 322]]
+    },
+    "18_03": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay after signal change. Two stopped vehicles and two resolvable oncoming cars boxed; removed a box that overlapped the sedan. Not independently audited.",
+      "boxes": [[455, 262, 654, 414], [728, 258, 949, 398], [190, 268, 286, 326], [323, 269, 401, 324]]
+    },
+    "18_04": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Black sedan, silver SUV and four visible opposing vehicles boxed; boundaries remain low-confidence under glare. Not independently audited.",
+      "boxes": [[436, 263, 625, 425], [711, 237, 965, 410], [0, 250, 118, 357], [131, 264, 230, 338], [255, 265, 337, 330], [345, 263, 420, 324]]
+    },
+    "18_06": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Stopped sedan, adjacent SUV and resolvable opposing cars boxed; unresolved headlight-only points excluded. Not independently audited.",
+      "boxes": [[484, 259, 637, 367], [713, 237, 963, 407], [0, 245, 100, 362], [121, 260, 221, 338], [238, 260, 320, 329], [345, 258, 423, 322], [420, 257, 480, 320]]
+    },
+    "18_08": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Emergency vehicle on the left excluded under pilot rules; stopped sedan and SUV boxed. Not independently audited.",
+      "boxes": [[480, 254, 641, 370], [710, 234, 965, 409]]
+    },
+    "18_10": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay after emergency vehicle leaves. Sedan, SUV, right-side cars and resolvable opposing cars boxed. Not independently audited.",
+      "boxes": [[479, 253, 642, 369], [710, 232, 968, 408], [237, 254, 322, 331], [345, 253, 424, 325], [964, 292, 1084, 377], [1080, 292, 1214, 390]]
+    },
+    "18_11": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Sedan and right-side SUV boxed; removed a box over empty roadway. Opposing cars retained only when bodies were discernible. Not independently audited.",
+      "boxes": [[449, 258, 610, 374], [956, 253, 1134, 392], [135, 258, 228, 335], [236, 258, 318, 330]]
+    },
+    "18_13": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Closer sedan, silver SUV and resolvable oncoming cars boxed; removed a redundant box overlapping the sedan. Not independently audited.",
+      "boxes": [[326, 257, 612, 447], [837, 203, 1280, 503], [0, 246, 120, 365], [128, 256, 235, 340], [242, 255, 328, 331]]
+    },
+    "18_15": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Sedan, SUV and visible cross-traffic bodies boxed; emergency-light glare targets excluded where boundaries were unclear. Not independently audited.",
+      "boxes": [[326, 256, 612, 447], [835, 202, 1280, 504], [0, 245, 120, 364], [128, 255, 234, 339], [241, 254, 328, 330]]
+    },
+    "18_17": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Emergency vehicle and its occluded fragments on the left excluded; stopped sedan and SUV boxed. Not independently audited.",
+      "boxes": [[326, 256, 612, 448], [835, 202, 1280, 505]]
+    },
+    "18_18": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay after emergency vehicle passes. Sedan, SUV and discernible cross-traffic bodies boxed; glare-only points excluded. Not independently audited.",
+      "boxes": [[326, 256, 612, 448], [835, 202, 1280, 505], [128, 255, 234, 339], [241, 254, 328, 330]]
+    },
+    "18_20": {
+      "status": "reviewed",
+      "notes": "AI second pass reviewed source and overlay. Sedan, large SUV and cross-traffic vehicles with visible bodies boxed; uncertain glare points excluded. Not independently audited.",
+      "boxes": [[326, 256, 612, 448], [835, 202, 1280, 505], [128, 255, 234, 339], [241, 254, 328, 330]]
     }
   }
 }

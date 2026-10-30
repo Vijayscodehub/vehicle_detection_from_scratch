@@ -4,8 +4,10 @@
 
 Version 1 is a CPU-only binary `vehicle` detector. Dataset selection is complete:
 500 images from 25 distinct source-prefix groups, split into 300 training,
-100 validation, and 100 test images. 13 training-pilot images (126 boxes) are
-AI-reviewed; 487 images still need reviewed labels. Full training is not complete.
+100 validation, and 100 test images. 51 training-pilot images (375 boxes) are
+AI-reviewed; 12 images remain draft and 437 remain pending. Full training is
+not complete. See [status.md](status.md) for the current detailed status and
+resume checklist.
 See [flow.md](flow.md) for the workflow and [decisions.md](decisions.md) for the
 execution decisions. Two- and three-class detection below are future extensions,
 not deliverables of the active run.

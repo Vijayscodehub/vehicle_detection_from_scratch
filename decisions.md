@@ -55,12 +55,13 @@ strength of reported performance claims.
 
 ## First Pilot Batch and CPU Diagnostic
 
-- 39 pilot images from three training videos are AI-reviewed, totaling 322
+- 51 pilot images from four training videos are AI-reviewed, totaling 375
   boxes. These labels remain subject to the eventual full-pilot rule freeze.
-- A fourth pilot video has 12 draft-only dusk annotations. Overlay review exposed
+- A fourth pilot video has 12 draft-only dusk annotations (109 boxes). Overlay review exposed
   speculative boxes over empty road/house fronts; these were removed. The batch
   remains draft and is excluded by the training loader until a reliable second
   visual pass is complete.
+- The sixth and final pilot video still has 12 unannotated pilot images.
 - Source images, coordinate guides, overlay reviews, and selected raw-image
   zooms were inspected. Corrections include missed objects, a vegetation false
   label, undersized fragments, overlapping targets, and box boundaries.

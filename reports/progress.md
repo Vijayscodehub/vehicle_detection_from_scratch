@@ -7,18 +7,19 @@ This is an incomplete project, not a final performance report.
 500 selected images from 25 videos; raw sources and curated images stay local.
 The manifest, source hashes, annotations, and reports are tracked in Git.
 
-| Split | Selected images | AI-reviewed images | Awaiting reviewed labels |
-| --- | ---: | ---: | ---: |
-| Training | 300 | 39 | 261 |
-| Validation | 100 | 0 | 100 |
-| Test | 100 | 0 | 100 |
-| Total | 500 | 39 | 461 |
+| Split | Selected | Reviewed | Draft | Pending |
+| --- | ---: | ---: | ---: | ---: |
+| Training | 300 | 51 | 12 | 237 |
+| Validation | 100 | 0 | 0 | 100 |
+| Test | 100 | 0 | 0 | 100 |
+| Total | 500 | 51 | 12 | 437 |
 
-The 39 reviewed images contain 322 boxes and come from three training videos.
-They are part of the 75-image training pilot, not an additional dataset. A
-fourth video has 12 draft-only dusk annotations, none eligible for training.
-All 36 remaining pilot images lack reviewed labels; 425 non-pilot images also
-remain unreviewed. AI self-review is not an independent annotation-quality audit.
+The 51 reviewed images contain 375 boxes and come from four training videos.
+They are part of the 75-image training pilot, not an additional dataset. One
+other pilot video has 12 draft-only dusk annotations (109 boxes); these are not
+eligible for training. The final pilot video has 12 images not yet annotated.
+The remaining 425 non-pilot images are also unreviewed. AI self-review is not an
+independent annotation-quality audit.
 
 ## Implemented and Checked
 
