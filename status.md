@@ -109,6 +109,8 @@ expected to be short compared with annotation.
 
 The repository is local-only; no remote is configured or used. Recent milestones:
 
+- `5037d11` Complete 75-image pilot and freeze annotation rules v0.3.
+- `d8e6030` Explain rationale alongside completed work summary.
 - `b23f945` Review fifth pilot video and add detailed pause-resume status.
 - `c39ef5e` Save fourth pilot video as draft pending dusk-label review.
 - `321f54f` Review third pilot video with 73 additional vehicle boxes.
